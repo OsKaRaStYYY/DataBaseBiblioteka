@@ -1,0 +1,88 @@
+﻿<Window x:Class="DataBaseBiblioteka.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataBaseBiblioteka"
+        mc:Ignorable="d" Background="#808080"
+        Title="BIBLIOTEKA Database" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <DataGrid Name ="KsiazkiList" Grid.Column="1" Grid.ColumnSpan="5" Grid.Row="1" 
+              Height="150" Width="auto" Margin="0,0,0,10" CanUserAddRows="False" AutoGenerateColumns="False"
+                  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id Klienta" Binding="{Binding Path=IdKlienta}"/>
+                <DataGridTextColumn Header="Imie" Binding="{Binding Path=Imie}"/>
+                <DataGridTextColumn Header="Nazwisko" Binding="{Binding Path=Nazwisko}"/>
+                <DataGridTemplateColumn Header="DataUrodzenia ">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=DataUrodzenia,StringFormat=d}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Ulica" Binding="{Binding Path=Ulica}"/>
+                <DataGridTextColumn Header="Numer Domu" Binding="{Binding Path=NumerDomu}"/>
+                <DataGridTextColumn Header="Kraj" Binding="{Binding Path=Kraj}"/>
+                <DataGridTextColumn Header="Telefon" Binding="{Binding Path= Telefon}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Grid.Column="1" Grid.Row="2" Text="Imie:" FontSize="20" Margin="0,0,0,10"/>
+        
+        <TextBox x:Name="NameText"   Grid.Column="2" Grid.Row="2" Width="150" Margin="0,0,0,10" />
+        
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="Nazwisko:" FontSize="20" Margin="0,0,0,10"/>
+        
+        <TextBox x:Name="LastNameText"   Grid.Column="2" Grid.Row="3" Width="150" Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="4" Text="Data Urodzenia:" FontSize="20" Margin="0,0,0,10"/>
+        
+        <TextBox x:Name="DataUrodzeniaText"   Grid.Column="2" Grid.Row="4" Width="150" Margin="0,0,0,10"/>
+        
+        <TextBlock Grid.Column="1" Grid.Row="5" Text="Ulica:" FontSize="20" Margin="0,0,0,10"/>
+        
+        <TextBox x:Name="UlicaText"   Grid.Column="2" Grid.Row="5" Width="150" Margin="0,0,0,10" />
+        
+        <TextBlock Grid.Column="1" Grid.Row="6" Text="Numer domu:" FontSize="20" Margin="0,0,0,10"/>
+        
+        <TextBox x:Name="NumerDomuText"   Grid.Column="2" Grid.Row="6" Width="150" Margin="0,0,0,10" />
+
+        <TextBlock Grid.Column="3" Grid.Row="2" Text="Kraj:" FontSize="20" Margin="10,0,20,10"/>
+        
+        <TextBox x:Name="KrajText"   Grid.Column="4" Grid.Row="2" Width="150" Margin="0,0,0,10" />
+        
+        <TextBlock Grid.Column="3" Grid.Row="3" Text="Telefon:" FontSize="20" Margin="10,0,20,10"/>
+        
+        <TextBox x:Name="TelefonText"   Grid.Column="4" Grid.Row="3" Width="150" Margin="0,0,0,10" />
+
+
+
+        <Button Grid.Column="4" Grid.Row="6" Height="27" Content="Submit" FontSize="15" Background="Beige"  
+                Foreground="Black" BorderThickness="3"/>
+
+    </Grid>
+</Window>
