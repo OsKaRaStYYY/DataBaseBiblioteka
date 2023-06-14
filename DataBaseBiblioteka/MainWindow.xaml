@@ -14,11 +14,15 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -78,11 +82,32 @@
         <TextBlock Grid.Column="3" Grid.Row="3" Text="Telefon:" FontSize="20" Margin="10,0,20,10"/>
         
         <TextBox x:Name="TelefonText"   Grid.Column="4" Grid.Row="3" Width="150" Margin="0,0,0,10" />
+        
+        
 
 
+        <Button Grid.Column="2" Grid.Row="8" Height="27" Content="Submit" FontSize="15" Background="Beige"  
+                Foreground="Black" BorderThickness="3" Click="Button_Click"/>
 
-        <Button Grid.Column="4" Grid.Row="6" Height="27" Content="Submit" FontSize="15" Background="Beige"  
-                Foreground="Black" BorderThickness="3"/>
+        <Button Grid.Column="4" Grid.Row="6" Height="27" Content="Select ID and Delete Row" FontSize="15" Background="Beige"  
+                Foreground="Black" BorderThickness="3" Click="Button_Click_1"  />
+        <TextBox x:Name="IDDeleteText"   Grid.Column="4" Grid.Row="5" Width="auto" Margin="0,0,0,10" />
+
+        <!--<DataGrid Grid.Column="6" Grid.Row="1" Width="auto">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox ItemsSource="{Binding Path=Imie}" SelectedItem="{Binding Path=Pacownicy}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>-->
+        <Button Grid.Column="9" Grid.Row="9" Height="27"  FontSize="15" Background="DarkKhaki"  
+                Foreground="Black" BorderThickness="3" Content="Następna" Click="Button_Click_2" />
+
+
 
     </Grid>
 </Window>

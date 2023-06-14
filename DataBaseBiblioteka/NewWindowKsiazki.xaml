@@ -1,0 +1,91 @@
+﻿<Window x:Class="DataBaseBiblioteka.NewWindowKsiazki"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataBaseBiblioteka"
+        mc:Ignorable="d" Background="#808080"
+        Title="NewWindowKsiazki" Height="470" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <DataGrid Name ="KsiazkiList" Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="1" 
+              Height="150" Width="400" Margin="0,0,500,10" CanUserAddRows="False" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Książki" Binding="{Binding Path=IdKsiazki}"/>
+                <DataGridTextColumn Header="Tytuł" Binding="{Binding Path=Tytul}"/>
+                <DataGridTextColumn Header="IdAutora" Binding="{Binding Path=IdAutora}"/>
+                <DataGridTemplateColumn Header="Rok Wydania ">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=RokWydania,StringFormat=d}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Wartość" Binding="{Binding Path=Wartosc}"/>
+                
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Grid.Column="1" Grid.Row="2" Text="Tytuł:" FontSize="20" Margin="0,0,0,10"/>
+
+        <TextBox x:Name="TytulText"   Grid.Column="2" Grid.Row="2" Width="150" Margin="0,0,0,10" />
+
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="Rok wydania:" FontSize="20" Margin="0,0,0,10"/>
+
+        <TextBox x:Name="RokWydaniaText"   Grid.Column="2" Grid.Row="3" Width="150" Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="4" Text="Watość:" FontSize="20" Margin="0,0,0,10"/>
+
+        <TextBox x:Name="WartoscText"   Grid.Column="2" Grid.Row="4" Width="150" Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="5" Text="Imie Autora:" FontSize="20" Margin="0,0,0,10"/>
+
+        <TextBox x:Name="ImieAutoraText"   Grid.Column="2" Grid.Row="5" Width="150" Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="6" Text="Nazwisko Autora:" FontSize="20" Margin="0,0,0,10"/>
+
+        <TextBox x:Name="NazwiskoAutoraText"   Grid.Column="2" Grid.Row="6" Width="150" Margin="0,0,0,10"/>
+
+        <Button Grid.Column="2" Grid.Row="9" Height="27" Content="Submit" FontSize="15" Background="Beige"  
+                Foreground="Black" BorderThickness="3" Click="Button_Click"   />
+        <DataGrid Name ="AutorzyList" Grid.Column="4"  Grid.Row="1" 
+              Height="150" Width="auto" Margin="0,0,100,10" />
+
+
+        <TextBox x:Name="IDDeleteText2"   Grid.Column="4" Grid.Row="9" Width="150" Margin="0,0,0,10"/>
+        <Button Grid.Column="4" Grid.Row="10" Height="27" Content="Select ID and Delete Row from Ksiazki" FontSize="15" Background="Beige"  
+                Foreground="Black" BorderThickness="3" Click="Button_Click_1" />
+        
+        <TextBox x:Name="IDDeleteText3"   Grid.Column="4" Grid.Row="5" Width="150" Margin="0,0,0,10"/>
+        
+        <Button Grid.Column="4" Grid.Row="6" Height="27" Content="Select ID and Delete Row from Autorzy" FontSize="15" Background="Beige"  
+                Foreground="Black" BorderThickness="3" Click="Button_Click_2"  />
+        <Button Grid.Column="1" Grid.Row="10" Height="27" Content="Back" FontSize="15" Background="Beige"  
+                Foreground="Black" BorderThickness="3" Click="Button_Click_3"/>
+    </Grid>
+</Window>
