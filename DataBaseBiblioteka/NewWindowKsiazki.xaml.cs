@@ -152,5 +152,12 @@ namespace DataBaseBiblioteka
             newWindow2.Show();
             this.Close();
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            PracownicyWindow newWindow3 = new PracownicyWindow();
+            newWindow3.Show();
+            this.Close();
+        }
     }
 }

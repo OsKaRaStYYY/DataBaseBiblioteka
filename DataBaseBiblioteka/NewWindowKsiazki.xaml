@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataBaseBiblioteka"
         mc:Ignorable="d" Background="#808080"
-        Title="NewWindowKsiazki" Height="470" Width="800">
+        Title="NewWindowKsiazki" Height="500" Width="900">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -71,21 +71,23 @@
 
         <TextBox x:Name="NazwiskoAutoraText"   Grid.Column="2" Grid.Row="6" Width="150" Margin="0,0,0,10"/>
 
-        <Button Grid.Column="2" Grid.Row="9" Height="27" Content="Submit" FontSize="15" Background="Beige"  
+        <Button Grid.Column="2" Grid.Row="7" Height="27" Content="Submit" FontSize="15" Background="Beige"  
                 Foreground="Black" BorderThickness="3" Click="Button_Click"   />
         <DataGrid Name ="AutorzyList" Grid.Column="4"  Grid.Row="1" 
               Height="150" Width="auto" Margin="0,0,100,10" />
 
 
-        <TextBox x:Name="IDDeleteText2"   Grid.Column="4" Grid.Row="9" Width="150" Margin="0,0,0,10"/>
-        <Button Grid.Column="4" Grid.Row="10" Height="27" Content="Select ID and Delete Row from Ksiazki" FontSize="15" Background="Beige"  
+        <TextBox x:Name="IDDeleteText2"   Grid.Column="4" Grid.Row="6" Width="150" Margin="0,0,0,10"/>
+        <Button Grid.Column="4" Grid.Row="7" Height="27" Content="Select ID and Delete Row from Ksiazki" FontSize="15" Background="Beige"  
                 Foreground="Black" BorderThickness="3" Click="Button_Click_1" />
         
-        <TextBox x:Name="IDDeleteText3"   Grid.Column="4" Grid.Row="5" Width="150" Margin="0,0,0,10"/>
+        <TextBox x:Name="IDDeleteText3"   Grid.Column="4" Grid.Row="3" Width="150" Margin="0,0,0,10"/>
         
-        <Button Grid.Column="4" Grid.Row="6" Height="27" Content="Select ID and Delete Row from Autorzy" FontSize="15" Background="Beige"  
+        <Button Grid.Column="4" Grid.Row="4" Height="27" Content="Select ID and Delete Row from Autorzy" FontSize="15" Background="Beige"  
                 Foreground="Black" BorderThickness="3" Click="Button_Click_2"  />
-        <Button Grid.Column="1" Grid.Row="10" Height="27" Content="Back" FontSize="15" Background="Beige"  
+        <Button Grid.Column="1" Grid.Row="12" Height="27" Content="Back" FontSize="15" Background="Beige"  
                 Foreground="Black" BorderThickness="3" Click="Button_Click_3"/>
+        <Button Grid.Column="4" Grid.Row="12" Height="27" Content="Next" FontSize="15" Background="Beige"  
+                Foreground="Black" BorderThickness="3" Click="Button_Click_4"  />
     </Grid>
 </Window>

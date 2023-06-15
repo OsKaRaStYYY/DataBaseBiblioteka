@@ -21,11 +21,11 @@ public partial class Pracownicy
 
     public string? Kraj { get; set; }
 
-    public int Pesel { get; set; }
+    public int? Pesel { get; set; }
 
     public string? Stanowisko { get; set; }
 
-    public decimal? Pensja { get; set; }
+    public decimal? Pensja { get; set; } = default(decimal?);
 
     public virtual ICollection<Wypozyczenie> Wypozyczenies { get; set; } = new List<Wypozyczenie>();
 

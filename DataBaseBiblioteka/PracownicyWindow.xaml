@@ -5,8 +5,112 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataBaseBiblioteka"
         mc:Ignorable="d" Background="#808080"
-        Title="PracownicyWindow" Height="450" Width="800">
+        Title="PracownicyWindow" Height="500" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <DataGrid Name ="PracownicyList" Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="1" 
+              Height="150" Width="760"  CanUserAddRows="False" AutoGenerateColumns="False"  >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Pracownika" Binding="{Binding Path=IdPracownika}"/>
+            <DataGridTextColumn Header="Imie" Binding="{Binding Path=Imie}"/>
+            <DataGridTextColumn Header="Nazwisko" Binding="{Binding Path=Nazwisko}"/>
+            <DataGridTemplateColumn Header="DataUrodzenia ">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Path=DataUrodzenia,StringFormat=d}"/>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Data Zatrudnienia ">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=DataZatrudnienia,StringFormat=d}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Ulica" Binding="{Binding Path=Ulica}"/>
+            <DataGridTextColumn Header="Numer Domu" Binding="{Binding Path=NumerDomu}"/>
+            <DataGridTextColumn Header="Kraj" Binding="{Binding Path=Kraj}"/>
+            <DataGridTextColumn Header="Pesel" Binding="{Binding Path= Pesel}"/>
+            <DataGridTextColumn Header="Stanowisko" Binding="{Binding Path= Stanowisko}"/>
+                <DataGridTextColumn Header="Pensja" Binding="{Binding Path= Pensja}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Grid.Column="1" Grid.Row="2" Text="Imie:" FontSize="20" Margin="0,10,0,10"/>
+
+        <TextBox x:Name="NameText"   Grid.Column="2" Grid.Row="2" Width="150" Margin="0,10,0,10" />
+
+        <TextBlock Grid.Column="1" Grid.Row="3" Text="Nazwisko:" FontSize="20" Margin="0,0,0,10"/>
+
+        <TextBox x:Name="LastNameText"   Grid.Column="2" Grid.Row="3" Width="150" Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="4" Text="Data Urodzenia:" FontSize="20" Margin="0,0,0,10"/>
+
+        <TextBox x:Name="DataUrodzeniaText"   Grid.Column="2" Grid.Row="4" Width="150" Margin="0,0,0,10"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="5" Text="Data Zatrudnienia:" FontSize="20" Margin="0,0,0,10"/>
+
+        <TextBox x:Name="DataZatrudnieniaText"   Grid.Column="2" Grid.Row="5" Width="150" Margin="0,0,0,10" />
+
+        <TextBlock Grid.Column="1" Grid.Row="6" Text="Ulica:" FontSize="20" Margin="0,0,0,10"/>
+
+        <TextBox x:Name="UlicaText"   Grid.Column="2" Grid.Row="6" Width="150" Margin="0,0,0,10" />
+
+        <TextBlock Grid.Column="3" Grid.Row="2" Text="Numer Domu:" FontSize="20" Margin="10,10,20,10"/>
+
+        <TextBox x:Name="NumerDomuText"   Grid.Column="4" Grid.Row="2" Width="150" Margin="0,10,0,10" />
+
+        <TextBlock Grid.Column="3" Grid.Row="3" Text="Kraj:" FontSize="20" Margin="10,0,20,10"/>
+
+        <TextBox x:Name="KrajText"   Grid.Column="4" Grid.Row="3" Width="150" Margin="0,0,0,10" />
+
+        <TextBlock Grid.Column="3" Grid.Row="4" Text="Pesel:" FontSize="20" Margin="10,0,20,10"/>
+
+        <TextBox x:Name="PeselText"   Grid.Column="4" Grid.Row="4" Width="150" Margin="0,0,0,10" />
+
+        <TextBlock Grid.Column="3" Grid.Row="5" Text="Stanowisko:" FontSize="20" Margin="10,0,20,10"/>
+
+        <TextBox x:Name="StanowiskoText"   Grid.Column="4" Grid.Row="5" Width="150" Margin="0,0,0,10" />
+
+        <TextBlock Grid.Column="3" Grid.Row="6" Text="Pensja:" FontSize="20" Margin="10,0,20,10"/>
+
+        <TextBox x:Name="PensjaText"   Grid.Column="4" Grid.Row="6" Width="150" Margin="0,0,0,10" />
+
+        <Button Grid.Column="1" Grid.Row="8" Height="27" Content="Submit" FontSize="15" Background="Beige"  
+                Foreground="Black" BorderThickness="3" Click="Button_Click" />
+        <Button Grid.Column="5" Grid.Row="9" Height="27" Content="Next" FontSize="15" Background="Beige"  
+                Foreground="Black" BorderThickness="3" Click="Button_Click_3"/>
+        <Button Grid.Column="1" Grid.Row="9" Height="27" Content="Back" FontSize="15" Background="Beige"  
+                Foreground="Black" BorderThickness="3" Width="50" Margin="0,10,150,0" Click="Button_Click_1"/>
+        <Button Grid.Column="3" Grid.Row="9" Height="27" Content="Select ID and Delete Row" FontSize="15" Background="Beige"  
+                Foreground="Black" BorderThickness="3" Click="Button_Click_2" />
+        <TextBox x:Name="DeletePracownikText"   Grid.Column="3" Grid.Row="8" Width="150" Margin="0,0,0,10" />
     </Grid>
 </Window>

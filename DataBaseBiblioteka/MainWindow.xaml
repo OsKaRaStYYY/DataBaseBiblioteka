@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataBaseBiblioteka"
         mc:Ignorable="d" Background="#808080"
-        Title="BIBLIOTEKA Database" Height="450" Width="800">
+        Title="BIBLIOTEKA Database" Height="500" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>

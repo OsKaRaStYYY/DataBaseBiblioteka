@@ -1,0 +1,142 @@
+﻿<Window x:Class="DataBaseBiblioteka.ZakupAndWypozyczenie"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataBaseBiblioteka"
+        mc:Ignorable="d" Background="#808080"
+        Title="ZakupAndWypozyczenie" Height="500" Width="850">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <DataGrid Name ="ZakupyList" Grid.Column="1" Grid.ColumnSpan="6" Grid.Row="2" Grid.RowSpan="3"
+              Height="150" Width="400" Margin="0,0,500,10" CanUserAddRows="False" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Zakupu" Binding="{Binding Path=IdZakupu}"/>
+                <DataGridTextColumn Header="Ilość" Binding="{Binding Path=IloscZakupu}"/>
+
+                <DataGridTemplateColumn Header="Data Zakupu">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=DataZakupu,StringFormat=d}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Data Otrzymania">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=DataOtrzymania,StringFormat=d}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Cena Zakupu" Binding="{Binding Path=CenaZakupu}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid Name ="WypozyczenieList" Grid.Column="1"  Grid.Row="5" Grid.RowSpan="3"
+              Height="150" Width="auto" Margin="0,0,100,10" CanUserAddRows="False" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Wypozyczenie" Binding="{Binding Path=IdWypozyczenia}"/>
+
+                <DataGridTemplateColumn Header="Data Wypozyczenia  ">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=DataWypozyczenia ,StringFormat=d}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Data Zwrotu">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=DataZwrotu ,StringFormat=d}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock Grid.Column="2" Grid.Row="1" Text="Ilość:" FontSize="15" />
+
+        <TextBox x:Name="IloscText"   Grid.Column="3" Grid.Row="1" Width="100" Height="20"  
+                 HorizontalAlignment="Left" />
+
+        <TextBlock Grid.Column="2" Grid.Row="2" Text="Data Zakupu:" FontSize="15" />
+
+        <TextBox x:Name="DataZakupuText"   Grid.Column="3" Grid.Row="2" Width="100" Height="20"
+                 HorizontalAlignment="Left" VerticalAlignment="Top " Margin="0,2,0,0"  />
+
+        <TextBlock Grid.Column="2" Grid.Row="2" Text="Data Otrzymania:" FontSize="15" 
+                  HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+        <TextBox x:Name="DataOtrzymaniaText"   Grid.Column="3" Grid.Row="2" Width="100" Height="20"
+                HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,5,0,0"  />
+
+        <TextBlock Grid.Column="2" Grid.Row="2" Text="Cena:" FontSize="15" 
+                  HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+
+        <TextBlock Grid.Column="2" Grid.Row="4" Text="Data Wypozycznia:" FontSize="15" />
+
+        <TextBox x:Name="DataWypozyczeniaText"   Grid.Column="3" Grid.Row="4" Width="100" Height="20"  
+                 HorizontalAlignment="Left" VerticalAlignment="Top" />
+
+        <TextBlock Grid.Column="2" Grid.Row="4" Text="Data Zwrotu:" FontSize="15"
+                   VerticalAlignment="Bottom"/>
+
+        <TextBox x:Name="DataZwrotuText"   Grid.Column="3" Grid.Row="4" Width="100" Height="20"  
+                 HorizontalAlignment="Left" VerticalAlignment="Bottom" />
+
+
+        <TextBox x:Name="CenaText"   Grid.Column="3" Grid.Row="2" Width="100" Height="20"
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="0,20,0,0"  />
+        <Button Grid.Column="3" Grid.Row="3" Height="27" Width="100" Content="Submit" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Background="Beige"  
+                Foreground="Black" BorderThickness="3" Click="Button_Click"/>
+        <Button Grid.Column="3" Grid.Row="5" Height="27" Width="100" Content="Submit" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Background="Beige"  
+                Foreground="Black" BorderThickness="3" Click="Button_Click_1"/>
+
+        <TextBox x:Name="IDDeleteZakupText"   Grid.Column="2" Grid.Row="6" Width="100" Height="20"  
+                 HorizontalAlignment="Center" VerticalAlignment="top" />
+        <Button Grid.Column="2" Grid.Row="6" Height="27" Width="auto" Content="ID from Zakup and Delete Row " 
+                HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15" Background="Beige"  
+                Foreground="Black" BorderThickness="3" Click="Button_Click_2" />
+        <TextBox x:Name="IDDeletewypozycznieText"   Grid.Column="1" Grid.Row="8" Width="100" Height="20"  
+                 HorizontalAlignment="Center" VerticalAlignment="top" />
+        <Button Grid.Column="1" Grid.Row="8" Height="27" Width="auto"
+                Content="ID from Wypozyczenie and Delete Row " 
+                HorizontalAlignment="Center" Margin="0,20,0,0"
+                VerticalAlignment="Center" FontSize="15" Background="Beige"  
+                Foreground="Black" BorderThickness="3" Click="Button_Click_3" />
+
+        <Button Grid.Column="3" Grid.Row="9" Height="27" Width="100" Content="Back" 
+                HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Background="Beige"  
+                Foreground="Black" BorderThickness="3" Click="Button_Click_4"/>
+       
+    </Grid>
+</Window>
